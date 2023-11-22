@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Profile</title>
+      <link rel="stylesheet" href="./assets/css/cv.css">
+      <link rel="stylesheet" href="./assets/css/responsive.css">
+      <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <ul id="nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#content">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="menu-icon ti-menu"></i>
+        </div>
+      </div>  
+      <div id="slider">
+        <div class="text-content text-center">
+          <h1 class="text-heading">Trần Gia Định</h1>
+          <div class="text-description">Data Scientist, Intern</div>
+        </div>
+      </div>
+
+      <div id="content">
+        <div class="content-section" id="about">
+          <h2 class="section-heading text-center">MY NAME IS</h2>
+          <p class="about-text">
+            Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div id="skill">
+          <div class="skill-section">
+            <h2 class="skill-heading text-center">SKILLS</h2>
+              <div class="skill-bars">
+                <div class="bar">
+                  <div class="info">
+                    <span>HTML</span>
+                  </div>
+                  <div class="progress-line html">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>CSS</span>
+                  </div>
+                  <div class="progress-line css">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>jQuery</span>
+                  </div>
+                  <div class="progress-line jquery">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>Python</span>
+                  </div>
+                  <div class="progress-line python">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="bar">
+                  <div class="info">
+                    <span>MySQL</span>
+                  </div>
+                  <div class="progress-line mysql">
+                    <span></span>
+                  </div>
+                </div>
+              </div>                
+        </div>
+        <div id="contact">
+          <div class="content-section">
+            <h2 class="contact-heading">Contact me</h2>
+            <div class="row contact-content">
+              <div class="col col-half contact-info">
+                <p><i class="ti-location-pin">HCM, Vietnam</i></p>
+                <p><i class="ti-mobile">Phone:<a href="tel:0899463002" class="mobile"> 0899463002</a></i></p>
+                <p><i class="ti-email">Email:<a href="mailto:trangiadinh23@gmail.com" class="email"> trangiadinh23@gmail.com</a></i></p>
+              </div>
+              <div class="col col-half contact-form">
+                <form action="">
+                  <div class="row">
+                    <div class="col col-half">
+                      <input type="text" name="" placeholder="Name" required id="" class="form-control">
+                    </div>
+                    <div class="col col-half">
+                      <input type="email" name="" placeholder="Email" required id="" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row mt-8">
+                    <div class="col col-full mt-8">
+                      <input type="text" name="" placeholder="Message" required id="" class="form-control">
+                    </div>
+                  </div>
+                  <input class="form-submit-btn mt-16 pull-right" type="submit" value="SEND">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="map" class="map-section">
+          <img src="./assets/img/map.jpg" alt="Hồ Chí Minh city">
+        </div>
+      </div>
+
+      <div id="footer">
+        <div class="social-list">
+          <a href="https://instagram.com/dinhtran49?igshid=MzMyNGUyNmU2YQ=="><i class="ti-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100027717263585&mibextid=ZbWKwL"><i class="ti-facebook"></i></a>
+          <a href="https://www.youtube.com/@inhtrangia9108"><i class="ti-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/định-trần-80a051281/"><i class="ti-linkedin"></i></a>
+        </div>
+        <p class="copyright">Power by <a href="#">VSCODE</a></p>
+      </div>
+    </div>
+    <script>
+      var header= document.getElementById('header');
+        var mobileMenu= document.getElementById('mobile-menu');
+
+        var headerHeight =header.clientHeight
+        
+        mobileMenu.onclick = function(){
+            var isClosed = header.clientHeight === headerHeight;
+            if(isClosed){
+                header.style.height = 'auto';
+                console.log('click')
+            } else{
+                header.style.height = null;
+            }
+        }
+
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for(var i = 0; i <menuItems.length;i++){
+            var menuItem = menuItems[i];
+           
+            menuItem.onclick = function(event){
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if(!isParentMenu){
+                    header.style.height = null;
+                } else{
+                    event.preventDefault();
+                }
+            }
+        }
+        
+    </script>
+  </body>
+</html>
